@@ -1,0 +1,7 @@
+vaniusa_blog_admin_user:
+    resource: "@VaniusaBlogBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user
+
+vaniusa_blog_homepage:
+    path:     /
+    defaults: { _controller: VaniusaBlogBundle:Default:index }

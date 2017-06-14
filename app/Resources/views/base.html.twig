@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Bienvenidos!!!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">mi Blog</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+
+            <ul class="nav navbar-nav">
+
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a href=" {{ path('admin_category_index') }}">Categorias</a></li>
+                    <li><a href=" {{ path('admin_user_index') }}">Usuarios</a></li>
+                    <li><a href=" {{ path('admin_post_index') }}">Articulos</a></li>
+
+                {% elseif is_granted('ROLE_USER') %}
+                    <li><a href=" {{ path('admin_post_index') }}">Articulos</a></li>
+
+                {% endif %}
+
+                <li><a href="/lang/es"><span class="flag-icon flag-icon-es">&nbsp;&nbsp;&nbsp;es</span> </a> </li>
+                <li><a href="/lang/md"><span class="flag-icon flag-icon-md">&nbsp;&nbsp;&nbsp;md</span> </a> </li>
+            </ul>
+            {% if app.user %}
+                <div class="navbar-form navbar-right">
+                    <a class="btn btn-success" href="{{ path('logout') }}" role="button">Logout</a>
+                </div>
+
+            {% else %}
+
+                <div class="navbar-form navbar-right">
+                    <a class="btn btn-success" href="#" role="button">Login</a>
+                </div>
+            {% endif %}
+
+        </div>      <!--/.navbar-collapse -->
+    </div>
+</nav>
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+{% endblock %}
+</body>
+</html>
