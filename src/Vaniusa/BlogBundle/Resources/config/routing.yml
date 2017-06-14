@@ -14,6 +14,9 @@ vaniusa_blog_homepage:
     path:     /
     defaults: { _controller: VaniusaBlogBundle:Default:index }
 
+vaniusa_blog_show:
+    path:     /post/{id}
+    defaults: { _controller: VaniusaBlogBundle:Default:show }
 login:
     path:    /login
     defaults: { _controller: VaniusaBlogBundle:Security:login }

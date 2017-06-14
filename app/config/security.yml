@@ -3,7 +3,7 @@
 security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
-        SIG\miBundle\Entity\User: bcrypt
+        Vaniusa\BlogBundle\Entity\User: bcrypt
     role_hierarchy:
         ROLE_ADMIN: [ROLE_USER]
     providers:
@@ -32,5 +32,5 @@ security:
         - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: /admin/user, roles: ROLE_ADMIN }
         - { path: /admin/category, roles: ROLE_ADMIN }
-       # - { path: /admin/post, roles: ROLE_USER }
+        - { path: /admin/post, roles: ROLE_USER }
         - { path: /.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }

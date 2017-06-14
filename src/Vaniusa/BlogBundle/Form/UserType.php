@@ -14,8 +14,10 @@ class UserType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username')
-            ->add('password', PasswordType::class);
+        $builder
+            ->add('username')
+            ->add('password', PasswordType::class)
+        ;
     }
     
     /**
@@ -27,14 +29,4 @@ class UserType extends AbstractType
             'data_class' => 'Vaniusa\BlogBundle\Entity\User'
         ));
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'vaniusa_blogbundle_user';
-    }
-
-
 }

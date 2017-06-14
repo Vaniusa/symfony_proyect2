@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+ {% block body %}
+
+
+             <div class="container cmt">
+                 <div class="row">
+                 <h2>{{ ppost.title }}</h2>
+                 <h3>{{ ppost.category }}</h3>
+                 <p>{{ ppost.content }}</p>
+             </div>
+         </div>
+     {% endblock %}

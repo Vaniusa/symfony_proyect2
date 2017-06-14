@@ -17,7 +17,7 @@
             <div class="col-md-4">
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.content|slice(0,60) }}....</p>
-                <p><a class="btn btn-default" href="{{ path('admin_post_show', {id:post.id}) }}" role="button">{% trans %}btn_view_more{% endtrans %}</a> </p>
+                <p><a class="btn btn-default" href="{{ path('vaniusa_blog_show', {id:post.id}) }}" role="button">{% trans %}btn_view_more{% endtrans %}</a> </p>
             </div>
         {% endfor %}
     </div>

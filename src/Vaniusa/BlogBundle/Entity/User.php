@@ -8,6 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * User
  */
+
 class User implements UserInterface
 {
     /**
@@ -84,19 +85,20 @@ class User implements UserInterface
         return $this->password;
     }
 
-    public function getSalt()
-    {
-        return null;
-    }
 
     public function getRoles()
     {
         return array('ROLE_USER');
     }
 
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
     }
 }
-

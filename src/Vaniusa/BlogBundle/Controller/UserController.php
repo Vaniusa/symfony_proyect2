@@ -5,6 +5,7 @@ namespace Vaniusa\BlogBundle\Controller;
 use Vaniusa\BlogBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Vaniusa\BlogBundle\Form\UserType;
 
 /**
  * User controller.

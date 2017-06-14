@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Post</h1>
+<div class="jumbotron">
+    <div class="container">
+    <h2>Post</h2>
 
     <table>
         <tbody>
@@ -33,4 +35,6 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+    </div>
+</div>
 {% endblock %}
