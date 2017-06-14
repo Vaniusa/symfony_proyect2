@@ -1,0 +1,26 @@
+Vaniusa\BlogBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: Vaniusa\BlogBundle\Repository\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '60'
+        content:
+            type: text
+    manyToOne:
+        category:
+            type: string
+            length: 255
+            targetEntity: Category
+            inversedBy: post
+            joinColumn:
+                name: category_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

@@ -12,4 +12,8 @@ Vaniusa\BlogBundle\Entity\Category:
         name:
             type: string
             length: '60'
+    oneToMany:
+        post:
+            targetEntity: Post
+            mappedBy: category
     lifecycleCallbacks: {  }
