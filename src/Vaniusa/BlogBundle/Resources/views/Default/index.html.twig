@@ -1,6 +1,25 @@
 {% extends '::base.html.twig' %}
+ {% block body %}
 
-{% block body %}
+     {% for post in post if post.category.id == 2 %}
+         <div class="jumbotron">
+             <div class="container">
+                 <h1>{{ post.title }}</h1>
+                 <p>{{ post.content|slice(0,60) }}...</p>
+                 <p><a class="btn btn-primary btn-lg" href="{{ path('admin_post_show', {id:post.id}) }}" role="button">{% trans %}btn_view_more{% endtrans %}</a></p>
+             </div>
+         </div>
+     {% endfor %}
 
-<p>Pagina principal</p>
-{% endblock %}
+<div class="container">
+    <div class="row">
+        {% for post in post|slice(0,3) %}
+            <div class="col-md-4">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content|slice(0,60) }}....</p>
+                <p><a class="btn btn-default" href="{{ path('admin_post_show', {id:post.id}) }}" role="button">{% trans %}btn_view_more{% endtrans %}</a> </p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}
