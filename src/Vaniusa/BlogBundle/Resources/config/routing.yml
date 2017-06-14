@@ -21,10 +21,12 @@ login:
     path:    /login
     defaults: { _controller: VaniusaBlogBundle:Security:login }
 
-
 login_check:
     path:    /login_check
 
-
 logout:
     path:    /logout
+
+vaniusa_lang:
+     path:     /lang/{_locale}
+     defaults: { _controller: VaniusaBlogBundle:Default:lang }

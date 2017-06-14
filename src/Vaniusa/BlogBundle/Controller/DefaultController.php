@@ -8,9 +8,8 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class DefaultController extends Controller
 {
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-
         $em = $this->getDoctrine()->getManager();
         $post = $em->getRepository('VaniusaBlogBundle:Post')->findAll();
         return $this->render('VaniusaBlogBundle:Default:index.html.twig', array('post'=>$post));
@@ -25,6 +24,6 @@ class DefaultController extends Controller
 
     public function langAction(Request $request)
     {
-        return $this->redirectToRoute("mi_homepage");
+        return $this->redirectToRoute('vaniusa_blog_homepage');
     }
 }
