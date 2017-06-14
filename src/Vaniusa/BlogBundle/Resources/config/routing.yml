@@ -1,3 +1,7 @@
+vaniusa_blog_admin_category:
+        resource: "@VaniusaBlogBundle/Resources/config/routing/category.yml"
+        prefix:   /admin/category
+
 vaniusa_blog_admin_user:
     resource: "@VaniusaBlogBundle/Resources/config/routing/user.yml"
     prefix:   /admin/user
@@ -5,3 +9,15 @@ vaniusa_blog_admin_user:
 vaniusa_blog_homepage:
     path:     /
     defaults: { _controller: VaniusaBlogBundle:Default:index }
+
+login:
+    path:    /login
+    defaults: { _controller: VaniusaBlogBundle:Security:login }
+
+
+login_check:
+    path:    /login_check
+
+
+logout:
+    path:    /logout

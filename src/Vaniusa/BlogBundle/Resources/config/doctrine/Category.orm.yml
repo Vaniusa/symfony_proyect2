@@ -1,0 +1,15 @@
+Vaniusa\BlogBundle\Entity\Category:
+    type: entity
+    table: null
+    repositoryClass: Vaniusa\BlogBundle\Repository\CategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '60'
+    lifecycleCallbacks: {  }

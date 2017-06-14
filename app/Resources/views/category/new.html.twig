@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="jumbotron">
+    <div class="container">
+        <h2>Crear categorias</h2>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_category_index') }}">Back to the list</a>
+        </li>
+    </ul>
+        </div>
+    </div>
+{% endblock %}
