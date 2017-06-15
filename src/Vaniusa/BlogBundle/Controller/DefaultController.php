@@ -26,4 +26,13 @@ class DefaultController extends Controller
     {
         return $this->redirectToRoute('vaniusa_blog_homepage');
     }
+
+    public function pagAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('VaniusaBlogBundle:Post')->findAll();
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($post, $request->query->getInt('page', 1), 2);
+        return $this->render('VaniusaBlogBundle:Default:pag.html.twig', array('pagination'=>$pagination));
+    }
 }

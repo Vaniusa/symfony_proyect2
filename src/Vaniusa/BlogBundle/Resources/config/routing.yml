@@ -14,6 +14,10 @@ vaniusa_blog_homepage:
     path:     /
     defaults: { _controller: VaniusaBlogBundle:Default:index }
 
+vaniusa_blog_pagination:
+    path:     /pag
+    defaults: { _controller: VaniusaBlogBundle:Default:pag }
+
 vaniusa_blog_show:
     path:     /post/{id}
     defaults: { _controller: VaniusaBlogBundle:Default:show }

@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+  {% block body %}
+      <div class="container-fluid cmt">
+          <h1>Paginación Symfony 3</h1>
+          <div>
+              <span class="label label-primary">Nº de entradas: {{ pagination.getTotalItemCount }}</span>
+          </div>
+          <br/>
+          <table class="table table-striped">
+              <tr>
+                  <th>Identificador</th>
+                  <th>Nombre del curso</th>
+              </tr>
+              {# cuerpo de la tabla #}
+              {% for pagination in pagination %}
+                  <tr {% if loop.index is odd %}{% endif %}>
+                      <td>{{ pagination.id }}</td>
+                      <td>{{ pagination.title }}</td>
+                  </tr>
+              {% endfor %}
+          </table>
+
+          {# navegación inferior #}
+          <div class="navigation">
+              {{ knp_pagination_render(pagination) }}
+          </div>
+      </div>
+  {% endblock %}
